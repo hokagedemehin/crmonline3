@@ -1,0 +1,35 @@
+{% extends 'account/base.html'%}
+{%load static%}
+{%block title%}
+User
+{%endblock title%}
+
+{%block content%}
+{%include 'account/status.html'%}
+<div class="row">
+    <div class="col-md ml-2 mr-2">
+        <div class="card card-body mb-2">
+            <table class="table table-sm">
+                <tr>
+                    <th>Product</th>
+                    <th>Note</th>
+                    <th>Category</th>
+                    <th>Date Ordered</th>
+                    <th>Status</th>
+                </tr>
+                <tbody>
+                    {%for order in orders%}
+                    <tr>
+                        <td>{{order.product}}</td>
+                        <td>{{order.note}}</td>
+                        <td>{{order.product.category}}</td>
+                        <td>{{order.date_created | date:"F d, Y"}}</td>
+                        <td>{{order.status}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock content%}

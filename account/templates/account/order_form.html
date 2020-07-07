@@ -1,0 +1,27 @@
+{% extends "account/base.html"%}
+{% load static %}
+{%block title%} 
+Order Form
+{%endblock title%}
+
+{%block content%} 
+<div class="row">
+    <div class="col-md-6 ml-3 mt-3">
+        <div class="card card-body">
+            <form action="" method="POST">
+                <legend>Create Order</legend>
+                <hr>
+                {% csrf_token %}
+                {{formset.as_p}}
+                <input type="submit" value="Submit" name="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock content%}
+
+<!-- {{formset.management_form}} -->
+<!-- {% for form in formset%} -->
+    <!-- {{form}} -->
+<!-- {%endfor%} -->
