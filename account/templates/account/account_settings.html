@@ -19,7 +19,7 @@
 
 <br>
 <div class="row">
-    <div class="col-md-3 ml-2 mr-2 mb-2">
+    <div class="col-md-3 m-2">
         <div class="card card-body">
             <a href="{% url 'home' %}" class="btn btn-warning">&#8592; Back to Profile</a>
             <hr>
@@ -28,7 +28,7 @@
             <img src="{{request.user.customer.profile_pic.url}}" alt="" class="profile-pic1">
         </div>
     </div>
-    <div class="col-md-5 ml-2 mr-2">
+    <div class="col-md-5 m-2">
         <div class="card card-body">
             <form action="" method="post" enctype="multipart/form-data">
                 {%csrf_token%}
